@@ -1,0 +1,48 @@
+{
+  "author": {
+    "name": "gui gui",
+    "email": "guirams@gmail.com"
+  },
+  "dependencies": {
+    "got": "^14.0.0"
+  },
+  "description": "Omie API wrapper for Node.js",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.9",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.2",
+    "mocha": "^7.0.1",
+    "nock": "^12.0.2",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "resources",
+    "index.js"
+  ],
+  "homepage": "https://github.com/zerezes/omie-api-node",
+  "keywords": [
+    "Omie",
+    "API",
+    "Client"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "omie-api-node",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore && prettier --check --ignore-path .gitignore \"**/*.{json,ts,yaml,yml}\"",
+    "test": "npm run lint && nyc --reporter=html --reporter=text mocha",
+    "watch": "mocha -w"
+  },
+  "version": "1.0.6"
+}
