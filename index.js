@@ -1,6 +1,6 @@
 'use strict';
 
-const got = require('got');
+const axios = require('axios');
 const pkg = require('./package');
 const resources = require('./resources');
 
@@ -61,29 +61,28 @@ Omie.prototype.request = function request(
       ...headers
     },
     timeout: this.options.timeout,
-    responseType: 'json',
-    retry: 0,
     method
   };
 
-  requestOptions.json = {
+  const requestData = {
     app_key: this.options.appKey,
     app_secret: this.options.appSecret,
     call: callName,
     param: [data]
   };
 
-  return got(url, requestOptions).then(
-    (res) => {
-      const body = res.body;
-      return body;
-    },
-    (err) => {
+  return axios({
+    url,
+    method,
+    data: requestData,
+    ...requestOptions
+  })
+    .then((response) => response.data)
+    .catch((error) => {
       return Promise.reject(
-        err.response && err.response.body ? err.response.body : err
-       );
-    }
-  );
+        error.response && error.response.data ? error.response.data : error
+      );
+    });
 };
 
 module.exports = Omie;
