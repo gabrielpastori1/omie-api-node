@@ -1,7 +1,6 @@
 'use strict';
 
-import resourcesMap from './resources.json' assert { type: 'json' };
-
+const resourcesMap = require('./resources.json');
 /**
  * Returns a prepared api call.
  *
@@ -71,4 +70,7 @@ function registerEndpoints(endpoints, Omie) {
   });
 }
 
-export { registerAll, registerEndpoints };
+module.exports = {
+  registerAll,
+  registerEndpoints
+};

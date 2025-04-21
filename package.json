@@ -6,7 +6,6 @@
   "dependencies": {
     "got": "^14.0.0"
   },
-  "type": "module",
   "description": "Omie API wrapper for Node.js",
   "devDependencies": {
     "chai": "^4.1.2",
@@ -45,5 +44,5 @@
     "test": "npm run lint && nyc --reporter=html --reporter=text mocha",
     "watch": "mocha -w"
   },
-  "version": "1.0.7"
+  "version": "1.0.8"
 }

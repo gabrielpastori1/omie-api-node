@@ -1,8 +1,8 @@
 'use strict';
 
-import got from 'got';
-import pkg from './package.js';
-import resources from './resources.js';
+const got = require('got');
+const pkg = require('./package');
+const resources = require('./resources');
 
 /**
  * Creates an Omie instance.
@@ -86,4 +86,4 @@ Omie.prototype.request = function request(
   );
 };
 
-export default Omie;
+module.exports = Omie;
