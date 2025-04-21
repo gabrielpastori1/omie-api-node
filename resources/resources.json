@@ -603,7 +603,7 @@
         "ObterStatusPix"
       ],
       "key": "contareceberpix",
-      "endpoint": "financas/contareceberpix"
+      "endpoint": "financas/pix"
     },
     "contacorrentelancamentos": {
       "callMethods": [
